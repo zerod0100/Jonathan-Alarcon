@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MicroPay | Proyecto AWS</title>
+
+    <meta name="description"
+          content="Proyecto MicroPay - Arquitectura de microservicios desplegada en AWS con ECS Fargate, ECR, API Gateway, ALB y CloudWatch.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            Jonathan Alarcón
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="../index.html">Inicio</a>
+            </li>
+
+            <li>
+                <a href="../index.html#sobre-mi">Sobre mí</a>
+            </li>
+
+            <li>
+                <a href="../index.html#proyectos">Proyectos</a>
+            </li>
+
+            <li>
+                <a href="../index.html#contacto">Contacto</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<main>
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>PROYECTO AWS</span>
+
+        <h1>MicroPay</h1>
+
+    </div>
+
+
+    <div class="project-card">
+
+        <div class="project-header">
+
+            <p class="project-label">
+                EVALUACIÓN MÓDULO 7
+            </p>
+
+            <h2>
+                Microservicios Orquestados en AWS
+            </h2>
+
+            <p class="project-subtitle">
+                Migración de una aplicación monolítica hacia una arquitectura
+                basada en microservicios utilizando servicios administrados de AWS.
+            </p>
+
+        </div>
+
+
+        <div class="project-content">
+
+            <div class="project-description">
+
+                <h3>📌 Descripción</h3>
+
+                <p>
+                    MicroPay es una aplicación fintech utilizada como caso de
+                    estudio para implementar una arquitectura de microservicios
+                    orientada a mejorar la escalabilidad, disponibilidad y
+                    desacoplamiento de los componentes de la aplicación.
+                </p>
+
+                <p>
+                    La solución separa las funcionalidades principales en dos
+                    servicios independientes: <strong>Usuarios</strong> y
+                    <strong>Pagos</strong>.
+                </p>
+
+                <p>
+                    Cada microservicio se ejecuta como un contenedor Docker
+                    desplegado mediante Amazon ECS con AWS Fargate.
+                </p>
+
+            </div>
+
+
+            <div class="project-technologies">
+
+                <span>AWS</span>
+                <span>ECS Fargate</span>
+                <span>Amazon ECR</span>
+                <span>API Gateway</span>
+                <span>Application Load Balancer</span>
+                <span>Docker</span>
+                <span>CloudWatch</span>
+                <span>Flask</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>01</span>
+
+        <h2>Arquitectura</h2>
+
+    </div>
+
+
+    <div class="architecture">
+
+        <div class="architecture-flow">
+
+            <div class="architecture-box">
+
+                🌐 Internet
+
+            </div>
+
+
+            <div class="arrow">
+                ↓
+            </div>
+
+
+            <div class="architecture-box highlight">
+
+                ☁️ API Gateway
+
+                <br>
+
+                <small>
+                    Punto de entrada
+                </small>
+
+            </div>
+
+
+            <div class="arrow">
+                ↓
+            </div>
+
+
+            <div class="architecture-box">
+
+                ⚖️ Application Load Balancer
+
+                <br>
+
+                <small>
+                    micropay-alb
+                </small>
+
+            </div>
+
+
+            <div class="arrow">
+                ↓
+            </div>
+
+
+            <div class="services">
+
+                <div class="architecture-box">
+
+                    👤 Usuarios
+
+                    <br><br>
+
+                    ECS Fargate
+
+                    <br>
+
+                    Puerto 5000
+
+                    <br>
+
+                    /usuarios
+
+                </div>
+
+
+                <div class="architecture-box">
+
+                    💳 Pagos
+
+                    <br><br>
+
+                    ECS Fargate
+
+                    <br>
+
+                    Puerto 5001
+
+                    <br>
+
+                    /pagos
+
+                </div>
+
+            </div>
+
+
+            <div class="arrow">
+                ↓
+            </div>
+
+
+            <div class="architecture-box">
+
+                📊 Amazon CloudWatch
+
+                <br>
+
+                <small>
+                    Logs y monitoreo
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>02</span>
+
+        <h2>Microservicios</h2>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+        <article class="card">
+
+            <h3>👤 Microservicio Usuarios</h3>
+
+            <h4>ECS Fargate · Puerto 5000</h4>
+
+            <p>
+                Servicio independiente encargado de gestionar las operaciones
+                relacionadas con usuarios.
+            </p>
+
+            <br>
+
+            <p>
+                Endpoint principal:
+                <strong>/usuarios</strong>
+            </p>
+
+            <p>
+                Health check:
+                <strong>/api/health</strong>
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>💳 Microservicio Pagos</h3>
+
+            <h4>ECS Fargate · Puerto 5001</h4>
+
+            <p>
+                Servicio independiente encargado de las operaciones
+                relacionadas con pagos.
+            </p>
+
+            <br>
+
+            <p>
+                Endpoint principal:
+                <strong>/pagos</strong>
+            </p>
+
+            <p>
+                Health check:
+                <strong>/api/health</strong>
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>03</span>
+
+        <h2>Servicios AWS utilizados</h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+        <div class="skill">
+
+            <h3>☁️ Amazon ECS</h3>
+
+            <p>
+                Orquestación y ejecución de los contenedores mediante
+                AWS Fargate.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>📦 Amazon ECR</h3>
+
+            <p>
+                Almacenamiento de las imágenes Docker de los microservicios.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>🌐 API Gateway</h3>
+
+            <p>
+                Punto de entrada para las solicitudes hacia los servicios.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>⚖️ Application Load Balancer</h3>
+
+            <p>
+                Distribución de solicitudes hacia los microservicios.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>📊 CloudWatch</h3>
+
+            <p>
+                Registro y supervisión básica de los servicios.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>🐳 Docker</h3>
+
+            <p>
+                Contenerización de las aplicaciones de Usuarios y Pagos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>04</span>
+
+        <h2>Resultados</h2>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>
+            La implementación permitió separar las funcionalidades de la
+            aplicación en servicios independientes, facilitando su despliegue
+            y administración.
+        </p>
+
+        <p>
+            Los microservicios fueron ejecutados correctamente sobre ECS
+            Fargate y las imágenes de los servicios fueron almacenadas en
+            Amazon ECR.
+        </p>
+
+        <p>
+            API Gateway permitió establecer un punto de entrada para las
+            solicitudes, mientras que Application Load Balancer gestionó
+            el enrutamiento hacia los servicios correspondientes.
+        </p>
+
+        <p>
+            Finalmente, Amazon CloudWatch permitió revisar los registros
+            generados por los contenedores y validar el funcionamiento de
+            los servicios.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section contact-section">
+
+    <div class="contact-content">
+
+        <h3>
+            Proyecto MicroPay
+        </h3>
+
+        <p>
+            Arquitectura de microservicios implementada utilizando
+            servicios administrados de Amazon Web Services.
+        </p>
+
+        <a href="../index.html#proyectos" class="btn">
+            ← Volver al portafolio
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Jonathan Alarcón. Portafolio Profesional.
+    </p>
+
+    <p>
+        AWS · Cloud · Informática · Tecnología
+    </p>
+
+</footer>
+
+</body>
+</html>
