@@ -310,206 +310,315 @@
 
 
         <!-- =========================
-             PROYECTOS
-        ========================== -->
+PROYECTOS
+========================== -->
 
-        <section id="proyectos" class="section projects-section">
+<section id="proyectos" class="section projects-section">
 
-            <div class="section-title">
-                <span>05</span>
-                <h2>Proyectos destacados</h2>
+    <div class="section-title">
+
+        <span>05</span>
+
+        <h2>Proyectos</h2>
+
+    </div>
+
+
+    <!-- =========================
+    PROYECTO 1 - MICROPAY
+    ========================== -->
+
+    <article class="project-card">
+
+        <div class="project-header">
+
+            <p class="project-label">
+                AWS · MICROSERVICIOS
+            </p>
+
+            <h3>
+                MicroPay
+            </h3>
+
+            <p class="project-subtitle">
+                Microservicios Orquestados en AWS
+            </p>
+
+        </div>
+
+
+        <div class="project-content">
+
+            <div class="project-description">
+
+                <p>
+                    Diseño e implementación de una arquitectura
+                    basada en microservicios para una aplicación
+                    fintech, utilizando servicios administrados
+                    de AWS.
+                </p>
+
+                <p>
+                    La solución separa las funcionalidades de
+                    Usuarios y Pagos en servicios independientes,
+                    desplegados como contenedores y accesibles
+                    mediante una arquitectura cloud.
+                </p>
+
             </div>
 
 
-            <article class="project-card">
+            <div class="project-technologies">
 
-                <div class="project-header">
+                <span>AWS</span>
+                <span>ECS Fargate</span>
+                <span>ECR</span>
+                <span>API Gateway</span>
+                <span>ALB</span>
+                <span>Docker</span>
+                <span>CloudWatch</span>
+                <span>Flask</span>
 
-                    <p class="project-label">
-                        AWS · MICROSERVICIOS
-                    </p>
+            </div>
 
-                    <h3>
-                        MicroPay
-                    </h3>
+        </div>
 
-                    <p class="project-subtitle">
-                        Microservicios Orquestados en AWS
-                    </p>
 
+        <!-- ARQUITECTURA MICROPAY -->
+
+        <div class="architecture">
+
+            <h4>
+                Arquitectura
+            </h4>
+
+            <div class="architecture-flow">
+
+                <div class="architecture-box">
+                    Internet
                 </div>
 
+                <div class="arrow">
+                    ↓
+                </div>
 
-                <div class="project-content">
+                <div class="architecture-box highlight">
+                    API Gateway
+                </div>
 
-                    <div class="project-description">
+                <div class="arrow">
+                    ↓
+                </div>
 
-                        <p>
-                            Diseño e implementación de una arquitectura
-                            basada en microservicios para una aplicación
-                            fintech, utilizando servicios administrados
-                            de AWS.
-                        </p>
+                <div class="architecture-box">
+                    Application Load Balancer
+                </div>
 
-                        <p>
-                            La solución separa las funcionalidades de
-                            Usuarios y Pagos en servicios independientes,
-                            desplegados como contenedores y accesibles
-                            mediante una arquitectura cloud.
-                        </p>
+                <div class="arrow">
+                    ↓
+                </div>
+
+                <div class="services">
+
+                    <div class="architecture-box">
+
+                        /usuarios<br>
+
+                        ECS Fargate<br>
+
+                        :5000
 
                     </div>
 
+                    <div class="architecture-box">
 
-                    <div class="project-technologies">
+                        /pagos<br>
 
-                        <span>AWS</span>
-                        <span>ECS Fargate</span>
-                        <span>ECR</span>
-                        <span>API Gateway</span>
-                        <span>ALB</span>
-                        <span>Docker</span>
-                        <span>CloudWatch</span>
-                        <span>Flask</span>
+                        ECS Fargate<br>
 
-                    </div>
-
-                </div>
-
-
-                <!-- DIAGRAMA -->
-
-                <div class="architecture">
-
-                    <h4>
-                        Arquitectura
-                    </h4>
-
-                    <div class="architecture-flow">
-
-                        <div class="architecture-box">
-                            Internet
-                        </div>
-
-                        <div class="arrow">
-                            ↓
-                        </div>
-
-                        <div class="architecture-box highlight">
-                            API Gateway
-                        </div>
-
-                        <div class="arrow">
-                            ↓
-                        </div>
-
-                        <div class="architecture-box">
-                            Application Load Balancer
-                        </div>
-
-                        <div class="arrow">
-                            ↓
-                        </div>
-
-                        <div class="services">
-
-                            <div class="architecture-box">
-                                /usuarios<br>
-                                ECS Fargate<br>
-                                :5000
-                            </div>
-
-                            <div class="architecture-box">
-                                /pagos<br>
-                                ECS Fargate<br>
-                                :5001
-                            </div>
-
-                        </div>
-
-                        <div class="arrow">
-                            ↓
-                        </div>
-
-                        <div class="architecture-box">
-                            CloudWatch Logs
-                        </div>
+                        :5001
 
                     </div>
 
                 </div>
 
-
-               <div class="project-footer">
-                    <p>Evaluación Módulo 7</p>
-
-                    <a href="proyectos/micropay.html" class="btn">
-                        Ver proyecto →
-                    </a>
+                <div class="arrow">
+                    ↓
                 </div>
-    <!-- PROYECTO 2 - SERVERLESS -->
-<div class="project-card">
 
-    <div class="project-header">
+                <div class="architecture-box">
+                    CloudWatch Logs
+                </div>
 
-        <p class="project-label">
-            AWS · SERVERLESS
-        </p>
+            </div>
 
-        <h3>
-            Serverless Inteligente
-        </h3>
+        </div>
 
-        <p class="project-subtitle">
-            Arquitectura Serverless para CloudCommerce
-        </p>
 
-    </div>
+        <div class="project-footer">
 
-    <div class="project-description">
+            <p>
+                Evaluación Módulo 7
+            </p>
 
-        <p>
-            Implementación de una arquitectura serverless
-            para una aplicación de comercio electrónico
-            utilizando servicios administrados de AWS.
-        </p>
+            <a href="proyectos/micropay.html" class="btn">
+                Ver proyecto →
+            </a>
 
-        <p>
-            El proyecto integra almacenamiento web, funciones
-            Lambda, API Gateway y DynamoDB para construir una
-            solución escalable y con bajo acoplamiento.
-        </p>
+        </div>
 
-    </div>
+    </article>
 
-    <div class="project-technologies">
 
-        <span>AWS</span>
-        <span>S3</span>
-        <span>Lambda</span>
-        <span>API Gateway</span>
-        <span>DynamoDB</span>
-        <span>CloudWatch</span>
-        <span>Python</span>
+    <!-- =========================
+    PROYECTO 2 - SERVERLESS
+    ========================== -->
 
-    </div>
+    <article class="project-card">
 
-    <div class="project-footer">
+        <div class="project-header">
 
-        <p>
-            Evaluación Módulo 8
-        </p>
+            <p class="project-label">
+                AWS · SERVERLESS
+            </p>
 
-        <a href="proyectos/serverless.html" class="btn">
-            Ver proyecto →
-        </a>
+            <h3>
+                Serverless Inteligente
+            </h3>
 
-    </div>
+            <p class="project-subtitle">
+                Arquitectura Serverless para CloudCommerce
+            </p>
 
-</div>          
-            </article>
+        </div>
 
-        </section>
+
+        <div class="project-content">
+
+            <div class="project-description">
+
+                <p>
+                    Implementación de una arquitectura serverless
+                    para una aplicación de comercio electrónico,
+                    utilizando servicios administrados de AWS.
+                </p>
+
+                <p>
+                    La solución integra almacenamiento web,
+                    funciones Lambda, API Gateway y DynamoDB
+                    para construir una arquitectura escalable
+                    y con bajo acoplamiento.
+                </p>
+
+            </div>
+
+
+            <div class="project-technologies">
+
+                <span>AWS</span>
+                <span>S3</span>
+                <span>Lambda</span>
+                <span>API Gateway</span>
+                <span>DynamoDB</span>
+                <span>CloudWatch</span>
+                <span>Python</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ARQUITECTURA SERVERLESS -->
+
+        <div class="architecture">
+
+            <h4>
+                Arquitectura
+            </h4>
+
+            <div class="architecture-flow">
+
+                <div class="architecture-box">
+                    Usuario
+                </div>
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-box highlight">
+                    Amazon S3
+                </div>
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-box highlight">
+                    API Gateway
+                </div>
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+                <div class="services">
+
+                    <div class="architecture-box">
+
+                        Lambda<br>
+
+                        Usuarios
+
+                    </div>
+
+                    <div class="architecture-box">
+
+                        Lambda<br>
+
+                        Pedidos
+
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-box">
+                    DynamoDB
+                </div>
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-box">
+                    CloudWatch
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-footer">
+
+            <p>
+                Evaluación Módulo 8
+            </p>
+
+            <a href="proyectos/serverless.html" class="btn">
+                Ver proyecto →
+            </a>
+
+        </div>
+
+    </article>
+
+
+</section>
         
 
 
