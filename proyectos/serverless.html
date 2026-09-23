@@ -39,28 +39,29 @@
     </nav>
 </header>
 
+
 <main>
 
     <!-- =========================
-         ENCABEZADO DEL PROYECTO
+         ENCABEZADO
     ========================== -->
 
-    <section class="section">
+    <section class="section projects-section">
 
         <div class="section-title">
-
             <span>AWS</span>
-
             <h2>Serverless Inteligente</h2>
-
         </div>
 
+
         <div class="project-card">
+
+            <!-- HEADER DEL PROYECTO -->
 
             <div class="project-header">
 
                 <p class="project-label">
-                    AWS · SERVERLESS
+                    AWS · SERVERLESS · MÓDULO 8
                 </p>
 
                 <h3>
@@ -74,14 +75,16 @@
             </div>
 
 
-            <!-- DESCRIPCIÓN -->
+            <!-- =========================
+                 DESCRIPCIÓN Y TECNOLOGÍAS
+            ========================== -->
 
             <div class="project-content">
 
-                <div class="project-description">
+                <div>
 
                     <h3>
-                        Descripción
+                        Descripción del proyecto
                     </h3>
 
                     <p>
@@ -92,94 +95,159 @@
 
                     <p>
                         El proyecto busca reducir la dependencia de
-                        servidores tradicionales y construir una
-                        solución escalable y de bajo acoplamiento.
+                        servidores tradicionales y construir una solución
+                        escalable, flexible y de bajo acoplamiento.
+                    </p>
+
+                    <p>
+                        La solución utiliza servicios administrados
+                        para separar la presentación, la lógica de
+                        negocio, las APIs y el almacenamiento de datos.
                     </p>
 
                 </div>
 
 
-                <!-- TECNOLOGÍAS -->
+                <div>
 
-                <div class="project-technologies">
+                    <h3>
+                        Tecnologías
+                    </h3>
 
-                    <span>AWS</span>
-                    <span>S3</span>
-                    <span>Lambda</span>
-                    <span>API Gateway</span>
-                    <span>DynamoDB</span>
-                    <span>CloudWatch</span>
-                    <span>Python</span>
+                    <div class="project-technologies">
+
+                        <span>AWS</span>
+                        <span>Amazon S3</span>
+                        <span>AWS Lambda</span>
+                        <span>API Gateway</span>
+                        <span>DynamoDB</span>
+                        <span>CloudWatch</span>
+                        <span>Python</span>
+
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <!-- ARQUITECTURA -->
+            <!-- =========================
+                 ARQUITECTURA
+            ========================== -->
 
             <div class="architecture">
 
                 <h4>
-                    Arquitectura
+                    Arquitectura Serverless
                 </h4>
+
+                <p class="architecture-description">
+                    Flujo de comunicación entre el usuario,
+                    los servicios AWS y la base de datos.
+                </p>
+
 
                 <div class="architecture-flow">
 
                     <div class="architecture-box">
-                        Usuario
+                        <strong>Usuario</strong>
+                        <br>
+                        Aplicación Web
                     </div>
+
 
                     <div class="arrow">
                         ↓
                     </div>
+
 
                     <div class="architecture-box highlight">
-                        Amazon S3
+
+                        <strong>Amazon S3</strong>
+
+                        <br>
+
+                        Sitio Web Estático
+
                     </div>
+
 
                     <div class="arrow">
                         ↓
                     </div>
+
 
                     <div class="architecture-box highlight">
-                        API Gateway
+
+                        <strong>API Gateway</strong>
+
+                        <br>
+
+                        API HTTP
+
                     </div>
+
 
                     <div class="arrow">
                         ↓
                     </div>
+
 
                     <div class="services">
 
                         <div class="architecture-box">
-                            Lambda
+
+                            <strong>AWS Lambda</strong>
+
                             <br>
+
                             Usuarios
+
                         </div>
+
 
                         <div class="architecture-box">
-                            Lambda
+
+                            <strong>AWS Lambda</strong>
+
                             <br>
+
                             Pedidos
+
                         </div>
 
                     </div>
 
-                    <div class="arrow">
-                        ↓
-                    </div>
-
-                    <div class="architecture-box">
-                        DynamoDB
-                    </div>
 
                     <div class="arrow">
                         ↓
                     </div>
 
+
+                    <div class="architecture-box highlight">
+
+                        <strong>Amazon DynamoDB</strong>
+
+                        <br>
+
+                        Base de datos NoSQL
+
+                    </div>
+
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+
                     <div class="architecture-box">
-                        CloudWatch
+
+                        <strong>Amazon CloudWatch</strong>
+
+                        <br>
+
+                        Logs y monitoreo
+
                     </div>
 
                 </div>
@@ -187,46 +255,73 @@
             </div>
 
 
-            <!-- SERVICIOS -->
+            <!-- =========================
+                 SERVICIOS AWS
+            ========================== -->
 
-            <div class="project-description">
+            <div class="project-content">
 
-                <h3>
-                    Servicios AWS utilizados
-                </h3>
+                <div>
 
-                <p>
-                    <strong>Amazon S3:</strong>
-                    alojamiento del sitio web estático.
-                </p>
+                    <h3>
+                        Servicios AWS utilizados
+                    </h3>
 
-                <p>
-                    <strong>AWS Lambda:</strong>
-                    ejecución de funciones para usuarios y pedidos
-                    sin administrar servidores.
-                </p>
+                    <p>
+                        <strong>Amazon S3:</strong>
+                        alojamiento del sitio web estático y
+                        distribución de los archivos de la aplicación.
+                    </p>
 
-                <p>
-                    <strong>Amazon API Gateway:</strong>
-                    exposición de las operaciones mediante endpoints
-                    HTTP.
-                </p>
+                    <p>
+                        <strong>AWS Lambda:</strong>
+                        ejecución de funciones para procesar las
+                        operaciones de usuarios y pedidos sin
+                        administrar servidores.
+                    </p>
 
-                <p>
-                    <strong>Amazon DynamoDB:</strong>
-                    almacenamiento NoSQL de los pedidos.
-                </p>
+                    <p>
+                        <strong>Amazon API Gateway:</strong>
+                        exposición de las operaciones mediante
+                        endpoints HTTP que permiten comunicarse
+                        con las funciones Lambda.
+                    </p>
 
-                <p>
-                    <strong>Amazon CloudWatch:</strong>
-                    supervisión y revisión de los registros de
-                    ejecución de las funciones Lambda.
-                </p>
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Datos y monitoreo
+                    </h3>
+
+                    <p>
+                        <strong>Amazon DynamoDB:</strong>
+                        almacenamiento NoSQL utilizado para gestionar
+                        la información de los pedidos.
+                    </p>
+
+                    <p>
+                        <strong>Amazon CloudWatch:</strong>
+                        supervisión de la ejecución de las funciones
+                        Lambda mediante registros y logs.
+                    </p>
+
+                    <p>
+                        <strong>Python:</strong>
+                        lenguaje utilizado para implementar la lógica
+                        de las funciones serverless.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <!-- APRENDIZAJES -->
+            <!-- =========================
+                 APRENDIZAJES
+            ========================== -->
 
             <div class="project-description">
 
@@ -237,25 +332,55 @@
                 <p>
                     El proyecto permitió aplicar conceptos de
                     arquitectura serverless, integración de servicios
-                    cloud, APIs y bases de datos NoSQL.
+                    cloud, desarrollo de APIs y utilización de bases
+                    de datos NoSQL.
                 </p>
 
                 <p>
                     También permitió comprender cómo separar
                     responsabilidades entre servicios administrados
-                    y utilizar Lambda para ejecutar lógica de negocio
-                    bajo demanda.
+                    y utilizar AWS Lambda para ejecutar lógica de
+                    negocio bajo demanda.
+                </p>
+
+                <p>
+                    La experiencia permitió reforzar conocimientos
+                    sobre escalabilidad, desacoplamiento y monitoreo
+                    dentro de una arquitectura cloud.
                 </p>
 
             </div>
 
 
-            <!-- FOOTER -->
+            <!-- =========================
+                 RESULTADO
+            ========================== -->
+
+            <div class="project-description">
+
+                <h3>
+                    Resultado
+                </h3>
+
+                <p>
+                    Se diseñó una solución orientada a servicios
+                    administrados de AWS, reduciendo la necesidad de
+                    mantener infraestructura de servidores y
+                    permitiendo que los componentes puedan escalar
+                    de acuerdo con la demanda.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 FOOTER DEL PROYECTO
+            ========================== -->
 
             <div class="project-footer">
 
                 <p>
-                    Evaluación Módulo 8
+                    Evaluación Módulo 8 · Serverless Inteligente
                 </p>
 
                 <a href="../index.html#proyectos" class="btn">
