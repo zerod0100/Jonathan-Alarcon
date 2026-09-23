@@ -439,7 +439,34 @@ header {
 .projects-section {
     background: rgba(17, 24, 39, 0.35);
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
 
+.projects-grid .project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-grid .project-card h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.projects-grid .project-card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.projects-grid .project-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
 .project-card {
     background: var(--card);
 
@@ -695,6 +722,9 @@ footer p {
     }
 
     .project-content {
+        grid-template-columns: 1fr;
+    }
+        .projects-grid {
         grid-template-columns: 1fr;
     }
 
