@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caso de Estudio | MicroPay | Jonathan Alarcón</title>
+
+    <meta name="description"
+        content="Caso de estudio técnico del proyecto MicroPay desarrollado con servicios AWS, microservicios, ECS Fargate, API Gateway y CloudWatch.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVEGACIÓN
+    ========================== -->
+
+    <header>
+        <div class="navbar">
+
+            <a href="../index.html" class="logo">
+                Jonathan Alarcón
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="../index.html#habilidades">Habilidades</a></li>
+                <li><a href="../index.html#proyectos">Proyectos</a></li>
+                <li><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                CASO DE ESTUDIO · MÓDULO 7
+            </div>
+
+            <h1>
+                Micro<span>Pay</span>
+            </h1>
+
+            <h2>
+                Migración de una arquitectura monolítica hacia microservicios en AWS
+            </h2>
+
+            <p>
+                Proyecto técnico desarrollado para diseñar e implementar una arquitectura
+                de microservicios utilizando servicios administrados de AWS, con foco en
+                escalabilidad, disponibilidad, desacoplamiento y monitoreo.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="../index.html#proyectos" class="btn">
+                    ← Volver al portafolio
+                </a>
+
+                <a href="micropay.html" class="btn btn-outline">
+                    Ver proyecto técnico
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SITUACIÓN INICIAL
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>01</span>
+            <h2>Situación inicial</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                MicroPay es una aplicación fintech que inicialmente utilizaba una
+                arquitectura monolítica. Esta estructura concentraba diferentes
+                funcionalidades dentro de una misma aplicación, dificultando la
+                escalabilidad independiente de cada componente.
+            </p>
+
+            <p>
+                Durante períodos de mayor utilización podían producirse cuellos de
+                botella, ya que una funcionalidad que requería más recursos podía
+                afectar el funcionamiento general de la aplicación.
+            </p>
+
+            <p>
+                Frente a esta situación se planteó una migración progresiva hacia
+                una arquitectura basada en microservicios utilizando servicios
+                administrados de AWS.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DESAFÍO
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>02</span>
+            <h2>Desafío técnico</h2>
+        </div>
+
+        <div class="experience-grid">
+
+            <div class="card">
+
+                <h3>Escalabilidad</h3>
+
+                <h4>01 · Arquitectura</h4>
+
+                <p>
+                    Permitir que los diferentes componentes de la aplicación
+                    puedan ejecutarse y escalarse de manera independiente.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Desacoplamiento</h3>
+
+                <h4>02 · Microservicios</h4>
+
+                <p>
+                    Separar las funcionalidades principales de la aplicación
+                    para reducir la dependencia entre componentes.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Disponibilidad</h3>
+
+                <h4>03 · AWS</h4>
+
+                <p>
+                    Utilizar servicios administrados de AWS para facilitar la
+                    ejecución, distribución y supervisión de los servicios.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOLUCIÓN
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>03</span>
+            <h2>Solución implementada</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                La solución consistió en dividir la aplicación en dos microservicios
+                principales: <strong>Usuarios</strong> y <strong>Pagos</strong>.
+            </p>
+
+            <p>
+                Los servicios fueron empaquetados mediante Docker y almacenados
+                en Amazon ECR. Posteriormente fueron ejecutados como tareas
+                independientes utilizando Amazon ECS con AWS Fargate.
+            </p>
+
+            <p>
+                Para distribuir las solicitudes se implementó un Application Load
+                Balancer, mientras que API Gateway funciona como punto de entrada
+                para las solicitudes de la aplicación.
+            </p>
+
+            <p>
+                Finalmente, Amazon CloudWatch permitió centralizar los registros
+                y facilitar el monitoreo básico de los servicios.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECNOLOGÍAS
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>04</span>
+            <h2>Tecnologías utilizadas</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>AWS ECS</h3>
+                <p>
+                    Orquestación y administración de los servicios de contenedores.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Fargate</h3>
+                <p>
+                    Ejecución de contenedores sin administrar servidores.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Docker</h3>
+                <p>
+                    Empaquetado y ejecución de las aplicaciones.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Amazon ECR</h3>
+                <p>
+                    Almacenamiento de las imágenes Docker de los microservicios.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>API Gateway</h3>
+                <p>
+                    Punto de entrada para las solicitudes hacia los servicios.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Application Load Balancer</h3>
+                <p>
+                    Distribución del tráfico entre los servicios disponibles.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>CloudWatch</h3>
+                <p>
+                    Registro y monitoreo básico de las aplicaciones.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>
+                    Lenguaje utilizado para desarrollar los microservicios.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ARQUITECTURA
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>05</span>
+            <h2>Arquitectura</h2>
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-header">
+
+                <div class="project-label">
+                    AWS · MICROSERVICIOS
+                </div>
+
+                <h3>Flujo de la solución</h3>
+
+                <p class="project-subtitle">
+                    Arquitectura implementada para MicroPay
+                </p>
+
+            </div>
+
+
+            <div class="architecture">
+
+                <div class="architecture-flow">
+
+                    <div class="architecture-box highlight">
+                        Usuario / Internet
+                    </div>
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+                    <div class="architecture-box highlight">
+                        Amazon API Gateway
+                    </div>
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+                    <div class="architecture-box">
+                        Application Load Balancer
+                    </div>
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="services">
+
+                        <div class="architecture-box highlight">
+                            ECS Fargate<br>
+                            Microservicio Usuarios
+                        </div>
+
+                        <div class="architecture-box highlight">
+                            ECS Fargate<br>
+                            Microservicio Pagos
+                        </div>
+
+                    </div>
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+                    <div class="architecture-box">
+                        Amazon CloudWatch
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESULTADOS
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>06</span>
+            <h2>Resultados del proyecto</h2>
+        </div>
+
+        <div class="certifications">
+
+            <div class="certification">
+
+                <strong>2 microservicios</strong>
+
+                <p>
+                    Usuarios y Pagos implementados como servicios independientes.
+                </p>
+
+            </div>
+
+
+            <div class="certification">
+
+                <strong>2 repositorios ECR</strong>
+
+                <p>
+                    Una imagen Docker para cada microservicio.
+                </p>
+
+            </div>
+
+
+            <div class="certification">
+
+                <strong>2 servicios ECS/Fargate</strong>
+
+                <p>
+                    Cada microservicio se ejecuta de forma independiente.
+                </p>
+
+            </div>
+
+
+            <div class="certification">
+
+                <strong>1 Application Load Balancer</strong>
+
+                <p>
+                    Distribución del tráfico hacia los microservicios.
+                </p>
+
+            </div>
+
+
+            <div class="certification">
+
+                <strong>1 API Gateway</strong>
+
+                <p>
+                    Punto de entrada para las solicitudes de la aplicación.
+                </p>
+
+            </div>
+
+
+            <div class="certification">
+
+                <strong>1 sistema de monitoreo</strong>
+
+                <p>
+                    CloudWatch utilizado para registros y observabilidad básica.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         APRENDIZAJES
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>07</span>
+            <h2>Aprendizajes obtenidos</h2>
+        </div>
+
+        <div class="experience-grid">
+
+            <div class="card">
+
+                <h3>Microservicios</h3>
+
+                <h4>Arquitectura</h4>
+
+                <p>
+                    Comprendí cómo dividir una aplicación en servicios independientes
+                    y cuáles son las ventajas del desacoplamiento.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Contenedores</h3>
+
+                <h4>Docker + Fargate</h4>
+
+                <p>
+                    Aprendí a crear imágenes Docker, almacenarlas en ECR y ejecutarlas
+                    mediante ECS Fargate.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Networking</h3>
+
+                <h4>AWS</h4>
+
+                <p>
+                    Trabajé con puertos, target groups, balanceadores, reglas de
+                    listeners y health checks.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Observabilidad</h3>
+
+                <h4>CloudWatch</h4>
+
+                <p>
+                    Comprendí la importancia de los registros para verificar el
+                    funcionamiento y diagnosticar problemas.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Resolución de problemas</h3>
+
+                <h4>Troubleshooting</h4>
+
+                <p>
+                    Durante la implementación fue necesario analizar errores de
+                    conectividad, puertos, health checks y configuración de servicios.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Integración AWS</h3>
+
+                <h4>Cloud</h4>
+
+                <p>
+                    Integré diferentes servicios de AWS para construir una solución
+                    completa orientada a una aplicación real.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HABILIDADES TÉCNICAS
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>08</span>
+            <h2>Habilidades demostradas</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>AWS Cloud</h3>
+                <p>Diseño e implementación de soluciones cloud.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Microservicios</h3>
+                <p>Diseño de aplicaciones desacopladas.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Docker</h3>
+                <p>Contenedorización de aplicaciones.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Desarrollo de servicios y APIs.</p>
+            </div>
+
+            <div class="skill">
+                <h3>REST API</h3>
+                <p>Comunicación entre componentes mediante APIs.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Networking</h3>
+                <p>Puertos, balanceadores, target groups y tráfico HTTP.</p>
+            </div>
+
+            <div class="skill">
+                <h3>ECS / Fargate</h3>
+                <p>Ejecución de contenedores administrados.</p>
+            </div>
+
+            <div class="skill">
+                <h3>CloudWatch</h3>
+                <p>Monitoreo y análisis de registros.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMPACTO
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>09</span>
+            <h2>Impacto técnico</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                La implementación permitió transformar el enfoque monolítico inicial
+                hacia una arquitectura distribuida basada en microservicios.
+            </p>
+
+            <p>
+                La separación de Usuarios y Pagos permite que cada componente pueda
+                evolucionar de forma independiente, facilitando futuras mejoras y
+                estrategias de escalamiento.
+            </p>
+
+            <p>
+                Además, la incorporación de API Gateway, Application Load Balancer
+                y CloudWatch permitió establecer una estructura más organizada para
+                el acceso, distribución y monitoreo de los servicios.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JUSTIFICACIÓN
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>10</span>
+            <h2>¿Por qué elegí este proyecto?</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                Elegí MicroPay como caso de estudio porque fue uno de los proyectos
+                que me permitió integrar una mayor cantidad de conocimientos técnicos
+                adquiridos durante el desarrollo del programa.
+            </p>
+
+            <p>
+                El proyecto combina desarrollo con Python, Docker, arquitectura de
+                microservicios, servicios cloud, networking, balanceo de carga,
+                contenedores y monitoreo.
+            </p>
+
+            <p>
+                También representó un desafío práctico, ya que fue necesario
+                solucionar problemas reales relacionados con configuración de
+                puertos, health checks, target groups, conectividad y comunicación
+                entre servicios.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONCLUSIÓN
+    ========================== -->
+
+    <section class="section contact-section">
+
+        <div class="contact-content">
+
+            <div class="section-title" style="justify-content:center;">
+                <span>11</span>
+                <h2>Conclusión</h2>
+            </div>
+
+            <h3>
+                De una arquitectura monolítica a una solución cloud
+            </h3>
+
+            <p>
+                El proyecto MicroPay representó una experiencia práctica de diseño
+                e implementación de una arquitectura de microservicios sobre AWS.
+                La solución permitió aplicar conocimientos de contenedores,
+                networking, APIs, balanceo de carga y monitoreo.
+            </p>
+
+            <p>
+                Más allá de la implementación técnica, el proyecto fortaleció mi
+                capacidad para analizar problemas, investigar soluciones y resolver
+                dificultades durante el desarrollo de una infraestructura cloud.
+            </p>
+
+            <div class="hero-buttons" style="justify-content:center;">
+
+                <a href="micropay.html" class="btn">
+                    Ver proyecto MicroPay
+                </a>
+
+                <a href="../index.html" class="btn btn-outline">
+                    Volver al portafolio
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Jonathan Alarcón
+        </p>
+
+        <p>
+            Portafolio Profesional Tech · AWS · Cloud Computing · Ciberseguridad
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
